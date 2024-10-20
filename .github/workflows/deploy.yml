@@ -27,6 +27,6 @@ jobs:
         lftp -f "
           open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST
           lcd $GITHUB_WORKSPACE  # Local directory with files
-          cd /htdocs/jk/temp  # Remote directory (e.g., /htdocs)
+          cd ./htdocs/jk/temp  # Remote directory (e.g., /htdocs)
           mirror --reverse --delete --verbose
         "
