@@ -1,0 +1,32 @@
+name: Deploy to InfinityFree via FTP
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment when changes are pushed to 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup FTP
+      run: |
+        sudo apt-get install lftp
+
+    - name: Deploy to InfinityFree
+      env:
+        FTP_HOST: ${{ secrets.FTP_HOST }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        FTP_DIR: ${{ secrets.FTP_DIR }}
+      run: |
+        lftp -f "
+          open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST
+          lcd $GITHUB_WORKSPACE  # Local directory with files
+          cd $FTP_DIR  # Remote directory (e.g., /htdocs)
+          mirror --reverse --delete --verbose
+        "
