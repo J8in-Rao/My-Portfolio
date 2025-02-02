@@ -1,0 +1,11 @@
+div{
+    display: block;
+    unicode-bidi: isolate;
+}
+
+html, body {
+    overflow: visible;
+    height: 100vh;
+    margin: 0;
+    min-height: calc(var(--vh, 1vh)* 100);
+}

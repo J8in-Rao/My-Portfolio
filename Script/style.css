@@ -224,3 +224,70 @@ footer {
     overflow: hidden;
 }
 
+/* Dedicated styleing for profile page */
+/* noice gif profile  */
+.ng_profile{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    min-height: calc(var(--vh, 1vh)* 100);
+    pointer-events: none;
+    opacity: 0.055;
+    z-index: 9999
+}
+
+.ng_gif_profile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/Asset/noise.gif);
+}
+/* Profile section styling */
+.profile{
+    padding-bottom: 32rem;
+}
+.profile_image_inner {
+    min-height: calc(var(--vh, 1vh)* 100);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Profile image word background styling */
+.profile_image_word_bg span{
+    line-height: .8;
+    font-size: 15rem;
+}
+
+.main_i_en{
+    font-family:  "Inika", serif !important;
+}
+
+.block{
+    display: block;;
+}
+.profile_image_photo{
+    position: absolute;
+}
+
+.profile_image_photo img{
+    width: 29rem !important;
+    height: auto;
+    transform: rotate(15deg);
+}
+
+/* comming soon massage */
+.commingsoon{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
