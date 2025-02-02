@@ -1,32 +1,18 @@
-name: Deploy to InfinityFree via FTP
-
-on:
-  push:
-    branches:
-      - master  # Trigger deployment when changes are pushed to 'main' branch
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Setup FTP
-      run: |
-        sudo apt-get install lftp
-
-    - name: Deploy to InfinityFree
-      env:
-        FTP_HOST: ${{ secrets.FTP_HOST }}
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        FTP_DIR: ${{ secrets.FTP_DIR }}
-      run: |
-        lftp -f "
-          open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST
-          lcd ../../  # Local directory with files
-          cd ./htdocs/jk/temp  # Remote directory (e.g., /htdocs)
-          mirror --reverse --delete --verbose
-        "
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftpupload.net
+        username: ${{ secrets.FTPUSERNAME }}
+        password: ${{ secrets.FTPPASSWORD }}
+        protocol: ftps
+        server-dir: /htdocs/
