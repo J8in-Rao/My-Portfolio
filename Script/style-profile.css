@@ -9,3 +9,33 @@ html, body {
     margin: 0;
     min-height: calc(var(--vh, 1vh)* 100);
 }
+
+/* ========================================
+   📱 RESPONSIVE DESIGN FOR PROFILE PAGE
+   ======================================== */
+
+/* 📱 Mobile Devices (up to 768px) */
+@media screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+    }
+    
+    /* Ensure proper text centering on mobile */
+    .text-center, .text_center {
+        text-align: center;
+    }
+    
+    /* Profile section adjustments */
+    .profile_image_inner {
+        padding: 1rem;
+        min-height: 80vh; /* Adjust height for mobile */
+    }
+}
+
+/* 📱 Small Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .profile_image_inner {
+        padding: 0.5rem;
+        min-height: 70vh;
+    }
+}

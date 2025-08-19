@@ -27,7 +27,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizelegibility;
     font-feature-settings: "palt";
-    cursor: url('/Asset/Normal.cur'), auto;
+    cursor: url('../Asset/Normal.cur'), auto;
 }
 
 /* Noice Gif styling */
@@ -45,7 +45,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(/Asset/noise.gif);
+    background-image: url(../Asset/noise.gif);
 }
 
 /* header styling */
@@ -75,7 +75,7 @@ a{
     background-color: rgba(255, 255, 255, 0.234);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
     backdrop-filter: blur(80px);
-    cursor: url('/Asset/icons8-select-40.png'), auto;
+    cursor: url('../Asset/icons8-select-40.png'), auto;
   }
 
 header .logo img{
@@ -181,7 +181,7 @@ header .works {
     top: 0;
     left: 0;
     z-index: -1;
-    background-image: url(/Asset/wolf-black-background.png);
+    background-image: url(../Asset/wolf-black-background.png);
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -240,7 +240,7 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(/Asset/noise.gif);
+    background-image: url(../Asset/noise.gif);
 }
 /* Profile section styling */
 .profile{
@@ -289,5 +289,184 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     text-align: center;
+}
+
+/* ========================================
+   📱 RESPONSIVE DESIGN - MOBILE FIRST
+   ======================================== */
+
+/* 📱 Mobile Devices (up to 768px) */
+@media screen and (max-width: 768px) {
+    /* Base font size adjustment for mobile */
+    html {
+        font-size: calc(100vw / 120); /* Smaller base font for mobile */
+    }
+    
+    body {
+        font-size: 1.4rem; /* Slightly smaller body font */
+    }
+    
+    /* Header responsive */
+    header {
+        padding: 2rem 1rem; /* Much smaller padding */
+        width: 100%;
+    }
+    
+    header .logo img {
+        width: 2.5rem; /* Smaller logo */
+    }
+    
+    header .works {
+        top: 0; /* Reset positioning */
+    }
+    
+    /* Hero headline responsive */
+    .hero_headline {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hero_headline .top_headline span {
+        font-size: 1.8rem; /* Smaller text */
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero_headline .top_headline .greating {
+        text-align: center; /* Center align for mobile */
+        padding-left: 0; /* Remove fixed padding */
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+    }
+    
+    .hero_headline .top_headline h1 {
+        font-size: 4rem; /* Much smaller main heading */
+        margin: -1rem 0; /* Adjusted margins */
+        line-height: 0.9;
+    }
+    
+    .hero_headline .bottom_headline p {
+        font-size: 1.4rem; /* Smaller subtitle */
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+    
+    .hero_headline .bottom_headline span {
+        font-size: 1.2rem; /* Smaller location text */
+    }
+    
+    /* Footer responsive */
+    footer {
+        bottom: 2rem; /* Less space from bottom */
+        padding: 0.5rem;
+    }
+    
+    .f_inner {
+        padding: 1rem 2rem; /* Smaller padding */
+        flex-direction: column; /* Stack on mobile */
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    /* Profile page responsive */
+    .profile {
+        padding-bottom: 8rem; /* Less bottom padding */
+    }
+    
+    .profile_image_word_bg span {
+        font-size: 6rem; /* Much smaller background text */
+        line-height: 0.7;
+    }
+    
+    .profile_image_photo img {
+        width: 18rem !important; /* Smaller profile image */
+        transform: rotate(10deg); /* Less rotation */
+    }
+    
+    .commingsoon {
+        font-size: 2rem; /* Smaller coming soon text */
+        padding: 0 1rem;
+    }
+    
+    /* Link hover effects adjustment for touch */
+    a {
+        border: 1rem solid transparent; /* Smaller borders */
+    }
+}
+
+/* 📱 Small Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: calc(100vw / 100); /* Even smaller base font */
+    }
+    
+    header {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    header .logo img {
+        width: 2rem;
+    }
+    
+    .hero_headline .top_headline h1 {
+        font-size: 3rem; /* Even smaller for very small screens */
+        margin: -0.5rem 0;
+    }
+    
+    .hero_headline .bottom_headline p {
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .profile_image_word_bg span {
+        font-size: 4rem; /* Smaller background text */
+    }
+    
+    .profile_image_photo img {
+        width: 15rem !important; /* Smaller profile image */
+    }
+    
+    .f_inner {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* 💻 Tablet Devices (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: calc(100vw / 150); /* Medium font size for tablets */
+    }
+    
+    header {
+        padding: 4rem 2rem;
+    }
+    
+    .hero_headline .top_headline .greating {
+        padding-left: 25rem; /* Adjust for tablet */
+    }
+    
+    .hero_headline .top_headline h1 {
+        font-size: 8rem; /* Medium heading size */
+    }
+    
+    .hero_headline .bottom_headline p {
+        font-size: 2rem;
+    }
+    
+    .profile_image_word_bg span {
+        font-size: 10rem;
+    }
+    
+    .profile_image_photo img {
+        width: 24rem !important;
+    }
+}
+
+/* 🖥️ Large Desktop Devices (1200px and up) */
+@media screen and (min-width: 1200px) {
+    /* Keep existing desktop styles - no changes needed */
+    /* This ensures the current desktop experience remains perfect */
 }
 
